@@ -1,0 +1,51 @@
+<html>
+
+<!-- Um casal acha que está apaixonado, eles só saberão quando colherem uma flor cada um 
+    e se uma das flores tiver um número par de pétalas e a outra tiver um número ímpar de pétalas, 
+    isso significa que eles estão apaixonados. -->
+
+
+<head>
+  <script>
+    function verificarAmor() {
+      var estaoApaixonados = (document.getElementById("txtPetalas1").value + document.getElementById('txtPetalas2').value) % 2 == 1
+
+
+      console.log('VOCÊ ENTROU NA FUNÇÃO QUE VERIFICA O AMOR')
+
+      flor1 = document.getElementById("txtPetalas1").value
+      flor2 = document.getElementById('txtPetalas2').value
+      flor1ehPar = flor1 % 2 == 0;
+      flor2ehPar = flor2 % 2 == 0;
+
+      //  se flor1ehPar e flor2ehPar forem diferentes então verdadeiro, eles estão apx  
+      //  se flor1ehPar e flor2ehPar forem  iguais então falso, n estão apaixonads
+
+      if (flor1ehPar != flor2ehPar) {
+        document.getElementById("resultado").innerText = "estão apaixonados"
+      }
+      else {
+        document.getElementById("resultado").innerText = "não estão apaixonados"
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Love Challenge</h1>
+  <p>DESAFIO DE CÓDIGO</p>
+  <p>Um casal acha que está apaixonado, eles só saberão quando colherem uma flor cada um e se uma das flores tiver um
+    número par de pétalas e a outra tiver um número ímpar de pétalas, isso significa que eles estão apaixonados.</p>
+  <p>Escreva uma função que pegará o número de pétalas de cada flor e retornará verdadeiro se eles estiverem apaixonados
+    e falso se não estiverem. </p>
+
+
+  <span>Número de pétalas da flor 1:</span><input type="text" id="txtPetalas1" />
+  <br>
+  <span>Número de pétalas da flor 2:</span><input type="text" id="txtPetalas2" />
+  <br>
+  <button type="submit" id="btnVerificarAmor" onclick="verificarAmor()">Verificar se o casal está apaixonado</button>
+  <p>Resultado: <span id="resultado"></span></p>
+</body>
+
+</html>
